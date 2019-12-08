@@ -2,6 +2,7 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:test_peto/register_customer.dart';
+import 'package:test_peto/statistics.dart';
 
 final Color backgroundColor = Color(0xFFFFFFFF);
 final Color backgroundColor2 = Color(0xFF4A4A58);
@@ -51,17 +52,17 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
         items: <Widget>[
-          Icon(
-            Icons.people,
+          Icon((Icons.people),
             color: Colors.white,
           ),
           Icon(
             Icons.home,
             color: Colors.white,
           ),
-          Icon(
-            Icons.insert_chart,
+          IconButton(
+            icon: Icon(Icons.insert_chart),
             color: Colors.white,
+            onPressed: () {Navigator.push(context, new MaterialPageRoute(builder: (context) => Statistics()));},
           )
         ],
       ),
