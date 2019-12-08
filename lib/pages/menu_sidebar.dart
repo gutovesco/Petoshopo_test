@@ -2,12 +2,13 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
 import 'package:test_peto/pages/cadastrar_cliente.dart';
-import 'package:test_peto/pages/register_customer.dart';
 import 'package:test_peto/pages/statistics.dart';
-import 'package:test_peto/pages/tela_lista_customer.dart';
+
+import 'colsult_customer.dart';
 
 final Color backgroundColor = Color(0xFFFFFFFF);
 final Color backgroundColor2 = Color(0xFF4A4A58);
+final Color backgroundColor3 = Color(0xFF77F745);
 
 class MenuDashboardPage extends StatefulWidget {
   @override
@@ -52,7 +53,7 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
       bottomNavigationBar: CurvedNavigationBar(
         onTap: (index){
           if(index == 0){
-            Navigator.push(context, MaterialPageRoute(builder: (context) => Registercustomer()));
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Consultcustomer()));
           }
           if(index == 2){
             Navigator.push(context, MaterialPageRoute(builder: (context) => Statistics()));
@@ -134,21 +135,18 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                       color: Colors.black,
                       height: 5.0),
                     new ListTile(
-                      title: new Text('Contact', style: TextStyle(
+                      title: new Text('About us', style: TextStyle(
                           color: Colors.black,
                           fontSize: 19,
                           fontFamily: "Quicksand",)), 
-                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
-                    ),
-                    new Divider(
-                      color: Colors.black,
-                      height: 5.0),
-                     new ListTile(
-                      title: new Text('App version: 1.0', style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 19,
-                          fontFamily: "Quicksand",)), 
-                      onTap: () => {}
+                      onTap: (){
+                showAboutDialog(context: context,
+                applicationIcon: FlutterLogo(),
+                applicationName: 'Petoshopo',
+                applicationVersion: '1.0.0',
+                applicationLegalese: 'Developed by Caio Faria Pedroso, Augusto Vesco Raveli and Samuel viado que nao sei o sobrenome \nGithub repo: https://github.com/KyleKun/petoshopo',
+                );
+              },
                     ),
                     new Divider(
                       color: Colors.black,
@@ -205,21 +203,21 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                           });
                         },
                       ),
-                      Text("PetoShopo",
-                          style: TextStyle(fontSize: 24, color: Colors.black)),
-                      GestureDetector(
-                        child: Icon(Icons.settings, color: Colors.black),
-                        onTap: () {
-                          print("Testando");
-                        },
-                      )
+                      Text("PetoShopo", style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",),),
                     ],
                   ),
+                  SizedBox(height: 25),
                   SingleChildScrollView(
                     child: Container(
                       child: Column(
                         children: <Widget>[
-                          Text("Tosa"),
+                          Text("Tosa", style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",)),
                           SingleChildScrollView(
                             child: Card(
                               shape: RoundedRectangleBorder(
@@ -244,7 +242,11 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                               ),
                             ),
                           ),
-                          Text("Alerta vacinação"),
+                          SizedBox(height: 35),
+                          Text("Alerta vacinação", style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",)),
                           SingleChildScrollView(
                             child: Card(
                               shape: RoundedRectangleBorder(
