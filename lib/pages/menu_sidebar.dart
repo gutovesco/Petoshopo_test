@@ -1,8 +1,10 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:test_peto/pages/cadastrar_cliente.dart';
 import 'package:test_peto/pages/register_customer.dart';
 import 'package:test_peto/pages/statistics.dart';
+import 'package:test_peto/pages/tela_lista_customer.dart';
 
 final Color backgroundColor = Color(0xFFFFFFFF);
 final Color backgroundColor2 = Color(0xFF4A4A58);
@@ -62,8 +64,10 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
         backgroundColor: Colors.white,
         animationCurve: Curves.easeInOut,
         items: <Widget>[
-          Icon((Icons.people),
+           IconButton(
+            icon: Icon(Icons.person),
             color: Colors.white,
+            onPressed: () {Navigator.push(context, new MaterialPageRoute(builder: (context) => Consultcustomer()));},
           ),
           Icon(
             Icons.home,
@@ -124,7 +128,7 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                           color: Colors.black,
                           fontSize: 19,
                           fontFamily: "Quicksand",)), 
-                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Signin()));}
                     ),
                     new Divider(
                       color: Colors.black,
@@ -144,7 +148,7 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                           color: Colors.black,
                           fontSize: 19,
                           fontFamily: "Quicksand",)), 
-                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                      onTap: () => {}
                     ),
                     new Divider(
                       color: Colors.black,
@@ -154,7 +158,7 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                           color: Colors.black,
                           fontSize: 19,
                           fontFamily: "Quicksand",)), 
-                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                      onTap: () => {}
                     ),
                   ],
                 ),

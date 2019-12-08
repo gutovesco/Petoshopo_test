@@ -1,6 +1,9 @@
 
 import 'package:flutter/material.dart';
 
+import 'menu_sidebar.dart';
+
+
 class Signin extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -131,6 +134,72 @@ class Signin extends StatelessWidget {
                       ),
                     ),
                   ),
+                   Container(
+                    width: MediaQuery.of(context).size.width/1.2,
+                    height: 45,
+                    margin: EdgeInsets.only(top: 12),
+                    padding: EdgeInsets.only(
+                        top: 4,left: 16, right: 16, bottom: 4
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(50)
+                        ),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 5
+                          )
+                        ]
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        icon: Icon(Icons.pets,
+                          color: Colors.grey,
+                        ),
+                        hintText: 'Pet name',
+                        labelStyle: TextStyle(
+                        fontFamily: "Quicksand",
+                ),
+                      ),
+                    ),
+                  ),
+
+                  Container(
+                    width: MediaQuery.of(context).size.width/1.2,
+                    height: 45,
+                    margin: EdgeInsets.only(top: 12),
+                    padding: EdgeInsets.only(
+                        top: 4,left: 16, right: 16, bottom: 4
+                    ),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(
+                            Radius.circular(50)
+                        ),
+                        color: Colors.white,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 5
+                          )
+                        ]
+                    ),
+                    child: TextField(
+                      decoration: InputDecoration(
+                        border: InputBorder.none,
+                        icon: Icon(Icons.pets,
+                          color: Colors.grey,
+                        ),
+                        hintText: 'Pet breed',
+                        labelStyle: TextStyle(
+                        fontFamily: "Quicksand",
+                ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 10),
                   SizedBox(height: 20),
 
                   Container(
@@ -162,7 +231,7 @@ class Signin extends StatelessWidget {
               }
               )
             )
-           )
+           ),
           ],
         ),
       ),
