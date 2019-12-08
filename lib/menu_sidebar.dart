@@ -1,6 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
+import 'package:test_peto/register_customer.dart';
 
 final Color backgroundColor = Color(0xFFFFFFFF);
 final Color backgroundColor2 = Color(0xFF4A4A58);
@@ -106,36 +107,44 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
                             color: Colors.black,
                             fontSize: 19,
                             fontFamily: "Quicksand")),
-                    SizedBox(height: 70),
-                    Text("Register customer",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 19,
-                            fontFamily: "Quicksand")),
-                    SizedBox(height: 10),
-                    Text("Contact",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 19,
-                            fontFamily: "Quicksand")),
-                    SizedBox(height: 10),
-                    Text("App version: 1.0",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 19,
-                            fontFamily: "Quicksand")),
-                    SizedBox(height: 10),
-                    Text("@ 2019 Petoshopo,",
-                        style: TextStyle(
+                    SizedBox(height: 20),
+                    new ListTile(
+                      title: new Text('Register Customer', style: TextStyle(
                           color: Colors.black,
                           fontSize: 19,
-                          fontFamily: "Quicksand",
-                        )),
-                    Text(" All Rights Reserved",
-                        style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 19,
-                            fontFamily: "Quicksand"))
+                          fontFamily: "Quicksand",)), 
+                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                    ),
+                    new Divider(
+                      color: Colors.black,
+                      height: 5.0),
+                    new ListTile(
+                      title: new Text('Contact', style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",)), 
+                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                    ),
+                    new Divider(
+                      color: Colors.black,
+                      height: 5.0),
+                     new ListTile(
+                      title: new Text('App version: 1.0', style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",)), 
+                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                    ),
+                    new Divider(
+                      color: Colors.black,
+                      height: 5.0),
+                     new ListTile(
+                      title: new Text('@2019 Petoshopo,\n All Rights Reserved', style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 19,
+                          fontFamily: "Quicksand",)), 
+                      onTap: (){Navigator.push(context, new MaterialPageRoute(builder: (BuildContext context) => new Registercustomer()));}
+                    ),
                   ],
                 ),
               ),

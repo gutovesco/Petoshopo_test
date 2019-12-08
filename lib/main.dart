@@ -166,11 +166,7 @@ class Signin extends StatelessWidget {
                           fontWeight: FontWeight.bold,
                           fontFamily: "Quicksand"
                         ),
-                      ), onPressed: () {Navigator.push(
-                  context,
-                 new MaterialPageRoute(
-                    builder: (context) => MenuDashboardPage(),
-                 
+                      ), onPressed: () {Navigator.push( context, new MaterialPageRoute(builder: (context) => MenuDashboardPage(),
                ),
              );
               }
