@@ -1,7 +1,7 @@
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flip_card/flip_card.dart';
 import 'package:flutter/material.dart';
-import 'package:test_peto/register_customer.dart';
+import 'package:test_peto/pages/register_customer.dart';
 
 final Color backgroundColor = Color(0xFFFFFFFF);
 final Color backgroundColor2 = Color(0xFF4A4A58);
@@ -20,6 +20,8 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
   Animation<double> _scaleAnimation;
   Animation<double> _menuScaleAnimation;
   Animation<Offset> _slideAnimation;
+
+  int page = 0;
 
   @override
   void initState() {
@@ -45,7 +47,12 @@ class _MenuDashboardPageState extends State<MenuDashboardPage>
     screenWidth = size.width;
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
-        index: 0,
+        onTap: (index){
+          if(index == 0){
+            Navigator.push(context, MaterialPageRoute(builder: (context) => Registercustomer()));
+          }
+        },
+        index: 1,
         height: 50,
         color: Color(0xFF77F745),
         backgroundColor: Colors.white,
